@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "Ultimate Hunt USGS Topo",
+  "name": "Ultimate Hunt",
   "sources": {
     "usgs-topo": {
       "type": "raster",
@@ -11,8 +11,31 @@
       "minzoom": 0,
       "maxzoom": 16,
       "attribution": "USGS The National Map"
+    },
+
+    "land-manager": {
+      "type": "raster",
+      "tiles": [
+        "https://gis.blm.gov/arcgis/rest/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/tile/{z}/{y}/{x}"
+      ],
+      "tileSize": 256,
+      "minzoom": 0,
+      "maxzoom": 15,
+      "attribution": "BLM Surface Management Agency"
+    },
+
+    "mvum": {
+      "type": "raster",
+      "tiles": [
+        "https://apps.fs.usda.gov/arcx/services/EDW/EDW_MVUM_01/MapServer/WMSServer?service=WMS&request=GetMap&version=1.1.1&layers=1,2&styles=&format=image/png&transparent=true&srs=EPSG:3857&bbox={bbox-epsg-3857}&width=256&height=256"
+      ],
+      "tileSize": 256,
+      "minzoom": 8,
+      "maxzoom": 18,
+      "attribution": "USDA Forest Service MVUM"
     }
   },
+
   "layers": [
     {
       "id": "usgs-topo",
@@ -20,6 +43,30 @@
       "source": "usgs-topo",
       "minzoom": 0,
       "maxzoom": 17
+    },
+
+    {
+      "id": "land-manager-layer",
+      "type": "raster",
+      "source": "land-manager",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "raster-opacity": 0.45
+      }
+    },
+
+    {
+      "id": "mvum-layer",
+      "type": "raster",
+      "source": "mvum",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "raster-opacity": 0.9
+      }
     }
   ]
 }

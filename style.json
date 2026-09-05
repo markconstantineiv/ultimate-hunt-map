@@ -33,6 +33,28 @@
       "minzoom": 8,
       "maxzoom": 18,
       "attribution": "USDA Forest Service MVUM"
+    },
+
+    "wdfw-access": {
+      "type": "raster",
+      "tiles": [
+        "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/MapServices/HOPubMapService1/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:0,1,2,3&f=image"
+      ],
+      "tileSize": 256,
+      "minzoom": 7,
+      "maxzoom": 18,
+      "attribution": "Washington Department of Fish and Wildlife"
+    },
+
+    "wdfw-land": {
+      "type": "raster",
+      "tiles": [
+        "https://geodataservices.wdfw.wa.gov/arcgis/rest/services/WP_RealEstate/WildlifeAreas/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&layers=show:0,1&f=image"
+      ],
+      "tileSize": 256,
+      "minzoom": 6,
+      "maxzoom": 18,
+      "attribution": "Washington Department of Fish and Wildlife"
     }
   },
 
@@ -58,6 +80,30 @@
     },
 
     {
+      "id": "wdfw-land-layer",
+      "type": "raster",
+      "source": "wdfw-land",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "raster-opacity": 0.6
+      }
+    },
+
+    {
+      "id": "wdfw-access-layer",
+      "type": "raster",
+      "source": "wdfw-access",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "raster-opacity": 0.95
+      }
+    },
+
+    {
       "id": "mvum-layer",
       "type": "raster",
       "source": "mvum",
@@ -65,7 +111,7 @@
         "visibility": "none"
       },
       "paint": {
-        "raster-opacity": 0.9
+        "raster-opacity": 0.95
       }
     }
   ]

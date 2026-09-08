@@ -91,36 +91,6 @@
       "minzoom": 8,
       "maxzoom": 20,
       "attribution": "USGS / USDA The National Map orthoimagery"
-    },
-    "lidar-roads": {
-      "type": "raster",
-      "tiles": [
-        "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&dpi=120&f=image"
-      ],
-      "tileSize": 256,
-      "minzoom": 7,
-      "maxzoom": 19,
-      "attribution": "USGS The National Map Transportation"
-    },
-    "lidar-landmarks": {
-      "type": "raster",
-      "tiles": [
-        "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&dpi=120&f=image"
-      ],
-      "tileSize": 256,
-      "minzoom": 7,
-      "maxzoom": 19,
-      "attribution": "USGS GNIS Geographic Names"
-    },
-    "lidar-mvum-navigation": {
-      "type": "raster",
-      "tiles": [
-        "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_MVUM_02/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&dpi=120&f=image"
-      ],
-      "tileSize": 256,
-      "minzoom": 8,
-      "maxzoom": 19,
-      "attribution": "USDA Forest Service MVUM"
     }
   },
   "layers": [
@@ -165,39 +135,6 @@
         "raster-contrast": 0.22,
         "raster-brightness-min": 0.05,
         "raster-brightness-max": 0.95
-      }
-    },
-    {
-      "id": "lidar-roads-layer",
-      "type": "raster",
-      "source": "lidar-roads",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "raster-opacity": 1.0
-      }
-    },
-    {
-      "id": "lidar-mvum-navigation-layer",
-      "type": "raster",
-      "source": "lidar-mvum-navigation",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "raster-opacity": 1.0
-      }
-    },
-    {
-      "id": "lidar-landmarks-layer",
-      "type": "raster",
-      "source": "lidar-landmarks",
-      "layout": {
-        "visibility": "none"
-      },
-      "paint": {
-        "raster-opacity": 1.0
       }
     },
     {

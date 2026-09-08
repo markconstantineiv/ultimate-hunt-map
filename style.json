@@ -138,6 +138,19 @@
       }
     },
     {
+      "id": "lidar-reference-layer",
+      "type": "raster",
+      "source": "usgs-topo",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "raster-opacity": 0.42,
+        "raster-saturation": -0.35,
+        "raster-contrast": 0.12
+      }
+    },
+    {
       "id": "land-manager-layer",
       "type": "raster",
       "source": "land-manager",

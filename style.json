@@ -12,6 +12,26 @@
       "maxzoom": 16,
       "attribution": "USGS The National Map"
     },
+    "satellite": {
+      "type": "raster",
+      "tiles": [
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+      ],
+      "tileSize": 256,
+      "minzoom": 0,
+      "maxzoom": 19,
+      "attribution": "Esri World Imagery"
+    },
+    "lidar-hillshade": {
+      "type": "raster",
+      "tiles": [
+        "https://gis.dnr.wa.gov/site1/rest/services/Public_Geology/Lidar_Hillshade/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=false&layers=show:1&f=image"
+      ],
+      "tileSize": 256,
+      "minzoom": 8,
+      "maxzoom": 19,
+      "attribution": "Washington Geological Survey bare-earth lidar hillshade"
+    },
     "land-manager": {
       "type": "raster",
       "tiles": [
@@ -61,16 +81,6 @@
       "minzoom": 5,
       "maxzoom": 18,
       "attribution": "Washington Department of Fish and Wildlife"
-    },
-    "lidar-hillshade": {
-      "type": "raster",
-      "tiles": [
-        "https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer/exportImage?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=png32&transparent=true&renderingRule=%7B%22rasterFunction%22%3A%22Hillshade%20Multidirectional%22%7D&f=image"
-      ],
-      "tileSize": 256,
-      "minzoom": 8,
-      "maxzoom": 18,
-      "attribution": "USGS 3DEP bare-earth elevation"
     }
   },
   "layers": [
@@ -82,6 +92,17 @@
       "maxzoom": 17
     },
     {
+      "id": "satellite-layer",
+      "type": "raster",
+      "source": "satellite",
+      "layout": {
+        "visibility": "none"
+      },
+      "paint": {
+        "raster-opacity": 1.0
+      }
+    },
+    {
       "id": "lidar-hillshade-layer",
       "type": "raster",
       "source": "lidar-hillshade",
@@ -89,7 +110,10 @@
         "visibility": "none"
       },
       "paint": {
-        "raster-opacity": 0.55
+        "raster-opacity": 1.0,
+        "raster-contrast": 0.22,
+        "raster-brightness-min": 0.05,
+        "raster-brightness-max": 0.95
       }
     },
     {

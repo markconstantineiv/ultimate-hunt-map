@@ -15,7 +15,7 @@
     "satellite": {
       "type": "raster",
       "tiles": [
-        "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+        "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=jpg&transparent=false&f=image"
       ],
       "tileSize": 256,
       "minzoom": 0,

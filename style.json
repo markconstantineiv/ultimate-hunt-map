@@ -85,11 +85,11 @@
     "aerial": {
       "type": "raster",
       "tiles": [
-        "https://imagery-state.watech.wa.gov/arcgis/rest/services/ImageServices/Statewide_2023_1ft_4band_wsps_83h_img/ImageServer/exportImage?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=jpgpng&f=image"
+        "https://imagery-state.watech.wa.gov/arcgis/rest/services/ImageServices/Statewide_2023_1ft_4band_wsps_83h_img/ImageServer/exportImage?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=jpg&compressionQuality=92&bandIds=1,2,3&interpolation=RSP_BilinearInterpolation&f=image"
       ],
       "tileSize": 256,
       "minzoom": 8,
-      "maxzoom": 20,
+      "maxzoom": 19,
       "attribution": "Washington State 2023 1-foot orthophoto"
     }
   },

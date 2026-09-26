@@ -1,0 +1,23 @@
+{
+  "version": 8,
+  "name": "Killer App Offline USGS Aerial",
+  "sources": {
+    "offline-aerial": {
+      "type": "raster",
+      "tiles": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPPlus/ImageServer/exportImage?bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=256,256&format=jpg&compressionQuality=92&f=image"
+      ],
+      "tileSize": 256,
+      "minzoom": 0,
+      "maxzoom": 17,
+      "attribution": "USGS / USDA The National Map"
+    }
+  },
+  "layers": [
+    {
+      "id": "offline-aerial-layer",
+      "type": "raster",
+      "source": "offline-aerial"
+    }
+  ]
+}
